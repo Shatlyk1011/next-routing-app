@@ -4,11 +4,17 @@ import { getPosts } from "@/services/getPosts"
 export async function generateStaticParams() {
   const posts = await getPosts()
 
-  return posts.map((post) => ({ id: post.id }))
+  return posts.map((post) => ({ id: post.id.toString() }))
 }
 
-export default async function SSG({ params }: { params: { id: string } }) {
-  const post = await getPosts(+params.id)
+interface Props {
+  params: Promise<{ id: string }>;
+}
+
+export default async function SSG({ params }: Props) {
+  const { id } = await params
+
+  const post = await getPosts(+id)
 
   return (
     <main className="h-svh w-full">
