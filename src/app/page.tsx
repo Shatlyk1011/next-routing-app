@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Home() {
   return (
     <main className="h-svh w-full">
-      <section className="w-full h-full py-20 px-30">
+      <section className="h-full w-full px-30 py-20">
         <ul className="flex items-center gap-10">
           <li>
             <Link href="/ssr">Server Side Rendering</Link>
@@ -20,5 +20,5 @@ export default function Home() {
         </ul>
       </section>
     </main>
-  );
+  )
 }

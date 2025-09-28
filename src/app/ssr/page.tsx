@@ -1,12 +1,11 @@
+import { getPosts } from "@/services/getPosts"
 
-import { getPosts } from "@/services/getPosts";
-
-import PostCard from "@/components/PostCard";
+import PostCard from "@/components/PostCard"
 
 export default async function SSR() {
-  const posts = await getPosts() 
+  const posts = await getPosts()
 
-  console.log('posts page', posts);
+  console.log("posts page", posts)
 
   return (
     <main className="h-svh w-full">
@@ -16,7 +15,6 @@ export default async function SSR() {
           <PostCard key={post.id} post={post} />
         ))}
       </section>
-
     </main>
-  );
+  )
 }
