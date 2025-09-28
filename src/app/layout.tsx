@@ -24,6 +24,8 @@ export default function RootLayout({
           href="/"
           className="m-10 inline-flex items-center gap-2 rounded-xl bg-neutral-200 px-4 py-2 pr-3 transition hover:bg-neutral-300"
         >
+          <span>Home Page</span>
+          {/* home icon */}
           <span>
             <svg
               className="h-5 w-5"
@@ -35,7 +37,6 @@ export default function RootLayout({
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
             </svg>
           </span>
-          <span>home page</span>
         </Link>
         {children}
       </body>
