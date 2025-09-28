@@ -1,26 +1,25 @@
-'use client'
-import { useState, useEffect } from "react";
+"use client"
+import { useState, useEffect } from "react"
 
 const Timer = () => {
-  const [seconds, setSeconds] = useState(20);
+  const [seconds, setSeconds] = useState(20)
 
   useEffect(() => {
-    // Set interval to count down every second
     const intervalId = setInterval(() => {
       setSeconds((prev) => {
         // When it reaches 0, reset to 20
         if (prev === 0) {
-          return 20;
+          return 20
         }
-        return prev - 1;
-      });
-    }, 1000);
+        return prev - 1
+      })
+    }, 1000)
 
     // Clear interval on component unmount
-    return () => clearInterval(intervalId);
-  }, []);
+    return () => clearInterval(intervalId)
+  }, [])
 
-  return <div className="inline-block">{seconds}</div>;
-};
+  return <div className="inline-block">{seconds}</div>
+}
 
-export default Timer;
+export default Timer

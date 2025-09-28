@@ -1,22 +1,22 @@
-'use client'
+"use client"
 import { useEffect, useState } from "react"
 
 import { getPosts } from "@/services/getPosts"
-import { IPost } from "@/shared/types";
+import { IPost } from "@/shared/types"
 
-import Link from "next/link";
-import PostCard from "@/components/PostCard";
+import Link from "next/link"
+import PostCard from "@/components/PostCard"
 
 export default function CSR() {
   const [posts, setPosts] = useState<IPost[]>([])
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPosts();
+      const data = await getPosts()
       setPosts(data)
-    };
-    fetchData();
-  }, []);
+    }
+    fetchData()
+  }, [])
   return (
     <main className="h-svh w-full">
       <h1>SSG Post Page</h1>

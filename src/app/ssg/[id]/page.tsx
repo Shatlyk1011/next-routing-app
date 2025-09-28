@@ -8,7 +8,7 @@ export async function generateStaticParams() {
 }
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string }>
 }
 
 export default async function SSG({ params }: Props) {
