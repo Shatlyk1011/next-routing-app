@@ -9,7 +9,5 @@ export function getPosts(): Promise<IPost[]>
 export async function getPosts(id?: number): Promise<IPost | IPost[]> {
   const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id || ""}`)
 
-  console.log("getPosts")
-
   return data
 }
