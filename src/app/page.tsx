@@ -1,17 +1,17 @@
-'use client'
-import { useEffect, useState } from "react";
+"use client"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 
 //components
-import Dialog from "@/components/DialogForm";
+import Dialog from "@/components/DialogForm"
 import GithubSamples from "@/components/GithubSamples"
-import { ISessionForm } from "@/shared/types";
+import { ISessionForm } from "@/shared/types"
 
 export default function Home() {
   const [sessionForm, setSessionForm] = useState<ISessionForm>()
 
   useEffect(() => {
-    const form = window?.sessionStorage?.getItem('form');
+    const form = window?.sessionStorage?.getItem("form")
     if (form) {
       setSessionForm(JSON.parse(form))
     }
@@ -36,18 +36,19 @@ export default function Home() {
           </li>
         </ul>
 
-        <div className="py-10 flex flex-col gap-4">
-          <button className="rounded-xl text-base self-start font-medium bg-zinc-200 px-4 py-3" id="dialog_btn">Модалка с формой</button>
+        <div className="flex flex-col gap-4 py-10">
+          <button className="self-start rounded-xl bg-zinc-200 px-4 py-3 text-base font-medium" id="dialog_btn">
+            Модалка с формой
+          </button>
           <div>
             Данные из формы (session storage)
-
             {sessionForm && (
               <ul>
                 <li>Имя : {sessionForm?.name}</li>
                 <li>Email : {sessionForm?.email}</li>
-                <li>File:
-                  <div className="gap-2 inline-flex ml-2">
-
+                <li>
+                  File:
+                  <div className="ml-2 inline-flex gap-2">
                     {sessionForm?.files?.map((name, idx) => (
                       <span key={idx}>{name}</span>
                     ))}
@@ -60,7 +61,6 @@ export default function Home() {
 
         <GithubSamples />
         <Dialog setSessionForm={setSessionForm} />
-
       </section>
     </main>
   )

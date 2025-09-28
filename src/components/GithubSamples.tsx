@@ -1,6 +1,6 @@
 const GithubSamples = () => {
   return (
-    <div className="max-w-max mt-30 rounded-2xl bg-neutral-100 py-6 px-8">
+    <div className="mt-30 max-w-max rounded-2xl bg-neutral-100 px-8 py-6">
       <h2 className="mb-6 text-xl font-semibold">Другие примеры моих работ (github) &darr; </h2>
       <ul className="flex flex-wrap items-center gap-5">
         <li className="flex flex-col rounded-xl bg-neutral-200 px-4 py-2 font-medium">
@@ -39,5 +39,5 @@ const GithubSamples = () => {
       </ul>
     </div>
   )
-};
+}
 export default GithubSamples

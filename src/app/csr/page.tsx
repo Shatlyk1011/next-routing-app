@@ -23,10 +23,11 @@ export default function CSR() {
       <section className="grid grid-cols-4 gap-4 px-6 py-10 max-lg:grid-cols-3 max-md:grid-cols-2">
         {posts.length ? (
           posts.map((post) => (
-          <Link className="inline-block w-full" key={post.id} href={`/ssg/${post.id}`}>
-            <PostCard post={post} />
-          </Link>
-        ))) : (
+            <Link className="inline-block w-full" key={post.id} href={`/ssg/${post.id}`}>
+              <PostCard post={post} />
+            </Link>
+          ))
+        ) : (
           <p>Loading...</p>
         )}
       </section>

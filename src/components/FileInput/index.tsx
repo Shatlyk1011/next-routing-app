@@ -30,9 +30,9 @@ const FileInput: FC<Props> = ({ selectedFiles, handleInput }) => {
   const handleDeleteFile = (name: string) => {
     const arr = selectedFiles?.filter((file) => name !== file.name)
 
-    if(arr && arr.length === 0) {
-      handleInput("files", )
-      inputRef.current!.value = ''
+    if (arr && arr.length === 0) {
+      handleInput("files")
+      inputRef.current!.value = ""
       return
     }
     handleInput("files", arr)
@@ -40,11 +40,7 @@ const FileInput: FC<Props> = ({ selectedFiles, handleInput }) => {
 
   return (
     <div className="flex flex-col gap-5">
-      <label
-        htmlFor="input"
-        role="button"
-        className="relative flex h-14 cursor-pointer items-center justify-center"
-      >
+      <label htmlFor="input" role="button" className="relative flex h-14 cursor-pointer items-center justify-center">
         <div className="flex items-center gap-2.5">
           {/* скрепка */}
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -57,7 +53,7 @@ const FileInput: FC<Props> = ({ selectedFiles, handleInput }) => {
             />
           </svg>
 
-          <span className="text-base only -tracking-two text-neutral-70">Attach docs (.PDF, .DOCX)</span>
+          <span className="only -tracking-two text-neutral-70 text-base">Attach docs (.PDF, .DOCX)</span>
         </div>
 
         {/* dashed border */}
@@ -84,7 +80,12 @@ const FileInput: FC<Props> = ({ selectedFiles, handleInput }) => {
       </label>
       <ul className="flex flex-wrap gap-2">
         {selectedFiles?.map((file, i) => (
-          <FileTag key={i} type={file.type as FileTypes} fileName={file.name} handleDelete={() => handleDeleteFile(file.name)} />
+          <FileTag
+            key={i}
+            type={file.type as FileTypes}
+            fileName={file.name}
+            handleDelete={() => handleDeleteFile(file.name)}
+          />
         ))}
       </ul>
     </div>

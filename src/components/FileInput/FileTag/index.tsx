@@ -18,7 +18,7 @@ const getFileIcon = (type: string, fileName: string) => {
             fill="#FF7F81"
           />
         </svg>
-        <span className="text-base -tracking-two">{fileName}</span>
+        <span className="-tracking-two text-base">{fileName}</span>
       </div>
     )
   }
@@ -31,7 +31,7 @@ const getFileIcon = (type: string, fileName: string) => {
           fill="#5B91FF"
         />
       </svg>
-      <span className="text-base -tracking-two">{fileName}</span>
+      <span className="-tracking-two text-base">{fileName}</span>
     </div>
   )
 }
@@ -42,7 +42,7 @@ const FileTag: FC<Props> = ({ type, fileName, handleDelete }) => {
       <div className="flex flex-1 items-center gap-1.5">{getFileIcon(type, fileName)}</div>
 
       <button type="button" onClick={handleDelete}>
-        <X className="h-4 w-4"/>
+        <X className="h-4 w-4" />
       </button>
     </li>
   )
