@@ -1,18 +1,19 @@
 import { getPosts } from "@/services/getPosts"
 
 import PostCard from "@/components/PostCard"
+import Link from "next/link"
 
 export default async function SSR() {
   const posts = await getPosts()
 
-  console.log("posts page", posts)
-
   return (
     <main className="h-svh w-full">
-      <section className="grid grid-cols-3">
-        <h1>Single Post</h1>
+      <h1>SSR Post Page</h1>
+      <section className="grid grid-cols-4 gap-4 px-6 py-10 max-lg:grid-cols-3 max-md:grid-cols-2">
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <Link className="inline-block w-full" key={post.id} href={`/ssg/${post.id}`}>
+            <PostCard post={post} />
+          </Link>
         ))}
       </section>
     </main>

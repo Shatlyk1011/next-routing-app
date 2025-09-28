@@ -7,9 +7,10 @@ interface Props {
 
 const PostCard: FC<Props> = ({ post }) => {
   return (
-    <div className="h-full w-full max-w-sm rounded-2xl">
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
+    <div className="h-full w-full rounded-2xl bg-blue-300 p-5">
+      <span className="mb-2 inline-block text-sm font-bold">Post id {post.id}</span>
+      <h2 className="mb-2 text-2xl font-normal">{post.title}</h2>
+      <p className="text-lg">{post.body}</p>
     </div>
   )
 }

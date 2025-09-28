@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import Link from "next/link"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -18,7 +19,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} mx-auto max-w-[1440px] antialiased`}>
+        <Link
+          href="/"
+          className="m-10 inline-flex items-center gap-2 rounded-xl bg-neutral-200 px-4 py-2 pr-3 transition hover:bg-neutral-300"
+        >
+          <span>
+            <svg
+              className="h-5 w-5"
+              focusable="false"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              aria-label="fontSize medium"
+            >
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+            </svg>
+          </span>
+          <span>home page</span>
+        </Link>
+        {children}
+      </body>
     </html>
   )
 }
