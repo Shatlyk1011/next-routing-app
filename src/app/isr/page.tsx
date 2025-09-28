@@ -16,9 +16,9 @@ export default async function ISR() {
       <div className="relative px-10 py-2">
         <h1 className="mb-2 !p-0">Incremental Static Regeneration </h1>
         <p>
-          Аннулировать кэш через
-          <span>
-            <Timer />
+          Аннулировать кэш через {" "}
+          <span>{" "}
+            <Timer /> 
           </span>
           секунд
         </p>
