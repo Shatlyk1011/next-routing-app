@@ -1,14 +1,16 @@
 import axios from "axios"
 
-const getPosts = async () => {
-  
-  const data = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+import { IPost } from "../shared/types";
 
-  const res = await data.data
+export function getPosts(id: number): Promise<IPost>;
 
-  console.log('res', res);
+export function getPosts(): Promise<IPost[]>;
 
-  return res
+export async function getPosts(id?: number): Promise<IPost | IPost[]> {
+  const response = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id || ""}`);
+  const data = response.data;
+
+  console.log("getPosts", data);
+
+  return data;
 }
-
-export default getPosts
